@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('fundraisers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
+            $table->boolean('is_active')->default(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
