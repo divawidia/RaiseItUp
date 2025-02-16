@@ -15,7 +15,15 @@ return new class extends Migration
             $table->id();
             $table->foreignId('fundraising_id')->constrained('fundraisings')->cascadeOnDelete();
             $table->foreignId('fundraiser_id')->constrained('fundraisers')->cascadeOnDelete();
+            $table->string('proof')->nullable();
+            $table->string('bank_name');
+            $table->string('bank_account_number');
+            $table->string('bank_account_name');
+            $table->unsignedBigInteger('amount_requested');
+            $table->unsignedBigInteger('amount_received')->nullable();
             $table->boolean('has_received')->default(false);
+            $table->boolean('has_sent')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
