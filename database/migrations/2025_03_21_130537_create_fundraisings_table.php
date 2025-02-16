@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('thumbnail')->nullable();
             $table->text('about')->nullable();
             $table->integer('target_amount');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
