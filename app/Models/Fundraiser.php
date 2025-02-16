@@ -10,11 +10,16 @@ class Fundraiser extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', // Assuming fundraisers have a name or other fields
+        'user_id',
+        'is_active',
     ];
 
     public function fundraisings()
     {
         return $this->hasMany(Fundraising::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
