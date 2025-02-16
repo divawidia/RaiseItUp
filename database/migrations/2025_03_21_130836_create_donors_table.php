@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('notes')->nullable();
             $table->boolean('is_paid')->default(false);
             $table->string('proof')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
