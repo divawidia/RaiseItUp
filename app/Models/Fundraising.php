@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Fundraising extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'fundraiser_id',
@@ -36,9 +37,9 @@ class Fundraising extends Model
         return $this->hasMany(FundraisingPhase::class);
     }
 
-    public function donations()
+    public function donors()
     {
-        return $this->hasMany(Donatur::class);
+        return $this->hasMany(Donor::class);
     }
 
     public function withdrawals()
