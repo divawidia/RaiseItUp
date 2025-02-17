@@ -55,6 +55,11 @@ class FundraisingController extends Controller
         //
     }
 
+    public function activateFundraising(Fundraising $fundraising)
+    {
+
+    }
+
     /**
      * Remove the specified resource from storage.
      */
