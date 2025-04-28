@@ -15,6 +15,24 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
+                        {{ __('Categories') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.fundraisings.index')" :active="request()->routeIs('admin.fundraisings.index')">
+                        {{ __('Fundraisings') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.donors.index')" :active="request()->routeIs('admin.donors.index')">
+                        {{ __('Donors') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.fundraising-withdrawals.index')" :active="request()->routeIs('admin.fundraising-withdrawals.index')">
+                        {{ __('Withdrawals') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.fundraisers.index')" :active="request()->routeIs('admin.fundraisers.index')">
+                        {{ __('fundraisers') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.my-withdrawals')" :active="request()->routeIs('admin.my-withdrawals')">
+                        {{ __('my withdrawals') }}
+                    </x-nav-link>
                 </div>
             </div>
 
