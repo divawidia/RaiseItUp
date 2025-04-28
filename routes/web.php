@@ -26,7 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('categories', CategoryController::class)->middleware('role:owner');
         Route::resource('donors', DonorController::class)->middleware('role:owner');
-        Route::resource('fundraisers', FundraiserController::class)->middleware('role:owner')->except('index');
+        Route::resource('fundraisers', FundraiserController::class)->middleware('role:owner');
 
         Route::resource('fundraising-withdrawals', FundraisingWithdrawalController::class)->middleware('role:owner|fundraiser');
         Route::post('fundraising-withdrawals/request/{fundraising}', [FundraisingWithdrawalController::class, 'store'])->middleware('role:fundraiser')->name('fundraising-withdrawals.store');
